@@ -1,0 +1,1905 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CassetteCSS — Kitchen Sink</title>
+        <!-- Space Grotesk + JetBrains Mono — the brutalist type stack -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Material Symbols Outlined -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./scss/cassettecss.scss" />
+    </head>
+    <body>
+        <!-- ── Navbar ─────────────────────────────────────────────────────── -->
+        <nav class="navbar">
+            <div
+                class="container-fluid"
+                style="
+                    padding-right: var(--space-6);
+                    padding-left: var(--space-6);
+                "
+            >
+                <div class="navbar-inner">
+                    <a href="#" class="navbar-brand">
+                        <span
+                            class="material-symbols-outlined navbar-brand-icon"
+                            >graphic_eq</span
+                        >
+                        CassetteCSS
+                    </a>
+                    <div class="navbar-links"></div>
+                    <span class="navbar-version" style="margin-left: auto">
+                        <span class="label">v1.0</span>
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ── Page layout ────────────────────────────────────────────────── -->
+        <div class="page-layout">
+            <!-- Sidenav -->
+            <nav class="sidenav">
+                <a href="#typography" class="sidenav-link"
+                    ><span class="sidenav-num">01</span> Typography</a
+                >
+                <a href="#colors" class="sidenav-link"
+                    ><span class="sidenav-num">02</span> Colors</a
+                >
+                <a href="#buttons" class="sidenav-link"
+                    ><span class="sidenav-num">03</span> Buttons</a
+                >
+                <a href="#labels" class="sidenav-link"
+                    ><span class="sidenav-num">04</span> Labels</a
+                >
+                <a href="#cards" class="sidenav-link"
+                    ><span class="sidenav-num">05</span> Cards</a
+                >
+                <a href="#alerts" class="sidenav-link"
+                    ><span class="sidenav-num">06</span> Alerts</a
+                >
+                <a href="#grid" class="sidenav-link"
+                    ><span class="sidenav-num">07</span> Grid</a
+                >
+                <a href="#modal" class="sidenav-link"
+                    ><span class="sidenav-num">08</span> Modal</a
+                >
+                <a href="#dropdown" class="sidenav-link"
+                    ><span class="sidenav-num">09</span> Dropdown</a
+                >
+                <a href="#accordion" class="sidenav-link"
+                    ><span class="sidenav-num">10</span> Accordion</a
+                >
+                <a href="#forms" class="sidenav-link"
+                    ><span class="sidenav-num">11</span> Forms</a
+                >
+                <a href="#progress" class="sidenav-link"
+                    ><span class="sidenav-num">12</span> Progress</a
+                >
+                <a href="#table" class="sidenav-link"
+                    ><span class="sidenav-num">13</span> Table</a
+                >
+            </nav>
+
+            <!-- Main content -->
+            <main style="padding: 0 var(--space-6); max-width: 900px">
+                <!-- ── 01 Typography ──────────────────────────────────────── -->
+                <section class="section" id="typography">
+                    <h4 style="margin-bottom: var(--space-6)">Typography</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Headings</span>
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+                        </div>
+
+                        <div class="stack">
+                            <span class="step-number">Body &amp; Lead</span>
+                            <p class="lead">
+                                Lead paragraph. Slightly larger, lighter weight.
+                                Used for introductory copy beneath a headline.
+                            </p>
+                            <p>
+                                Body copy. Color is <code>--mute</code>,
+                                line-height is <code>--leading-loose</code>.
+                                Paragraphs sit at 15px by default and are
+                                comfortable for reading longer passages of text.
+                            </p>
+                            <p>
+                                A second paragraph to show rhythm. The spacing
+                                between paragraphs is handled by the
+                                <code>.stack</code> utility.
+                            </p>
+                        </div>
+
+                        <div class="stack">
+                            <span class="step-number">Inline elements</span>
+                            <p>
+                                Text with <strong>strong emphasis</strong>,
+                                <em>italic emphasis</em>,
+                                <mark>highlighted text</mark>, and
+                                <a href="#">a link</a>.
+                            </p>
+                            <p>
+                                Inline code: <code>const x = 42</code>. Keyboard
+                                input: <kbd>Ctrl</kbd> + <kbd>K</kbd>. Sample
+                                output: <samp>200 OK</samp>.
+                            </p>
+                            <abbr title="Cascading Style Sheets">CSS</abbr> —
+                            abbreviation with tooltip on hover.
+                        </div>
+
+                        <div>
+                            <span class="step-number">Blockquote</span>
+                            <blockquote class="blockquote">
+                                The details are not the details. They make the
+                                design.
+                                <p class="blockquote-footer">Charles Eames</p>
+                            </blockquote>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Code block</span>
+                            <pre><code>import { Modal } from './plugins/modal.js'
+
+document.addEventListener('DOMContentLoaded', () =&gt; {
+  Modal.init()
+})</code></pre>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Horizontal rule</span>
+                            <p>Content above.</p>
+                            <hr />
+                            <p>Content below.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 02 Colors ──────────────────────────────────────────── -->
+                <section class="section" id="colors">
+                    <h4 style="margin-bottom: var(--space-6)">Colors</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Brand &amp; accent</span>
+                            <div class="flex-row">
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--accent);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--accent</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--accent-2);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--accent-2</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--hazard);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--hazard</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--ok);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--ok</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--warn);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--warn</code
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Surfaces &amp; neutrals</span
+                            >
+                            <div class="flex-row">
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--ink);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--ink</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--ink-2);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--ink-2</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--mute);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--mute</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--disabled);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--disabled</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--cell-bg);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--cell-bg</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--sidebar-bg);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--sidebar-bg</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--bone);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--bone</code
+                                    >
+                                </div>
+                                <div style="text-align: center">
+                                    <div
+                                        style="
+                                            width: 80px;
+                                            height: 80px;
+                                            background: var(--paper);
+                                            border: var(--border);
+                                        "
+                                    ></div>
+                                    <code style="font-size: var(--text-xs)"
+                                        >--paper</code
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 03 Buttons ─────────────────────────────────────────── -->
+                <section class="section" id="buttons">
+                    <h4 style="margin-bottom: var(--space-6)">Buttons</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number"
+                                >Variants (shadow + offset hover)</span
+                            >
+                            <div
+                                class="flex-row"
+                                style="padding-bottom: var(--space-4)"
+                            >
+                                <button class="btn">Default</button>
+                                <button class="btn btn-primary">Primary</button>
+                                <button class="btn btn-danger">Danger</button>
+                                <button class="btn btn-success">Success</button>
+                                <button class="btn btn-warning">Warning</button>
+                                <button class="btn btn-info">Info</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Static variants (color-fill hover, no
+                                offset)</span
+                            >
+                            <div class="flex-row">
+                                <button class="btn btn-static">Default</button>
+                                <button class="btn btn-primary btn-static">
+                                    Primary
+                                </button>
+                                <button class="btn btn-danger btn-static">
+                                    Danger
+                                </button>
+                                <button class="btn btn-success btn-static">
+                                    Success
+                                </button>
+                                <button class="btn btn-warning btn-static">
+                                    Warning
+                                </button>
+                                <button class="btn btn-info btn-static">
+                                    Info
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Hazard stripe decorator</span
+                            >
+                            <div
+                                class="flex-row"
+                                style="
+                                    padding-top: var(--space-2);
+                                    padding-bottom: var(--space-4);
+                                "
+                            >
+                                <button class="btn is-hazard">Default</button>
+                                <button class="btn btn-primary is-hazard">
+                                    Primary
+                                </button>
+                                <button class="btn btn-danger is-hazard">
+                                    Danger
+                                </button>
+                                <button class="btn btn-success is-hazard">
+                                    Success
+                                </button>
+                                <button class="btn btn-warning is-hazard">
+                                    Warning
+                                </button>
+                                <button class="btn btn-info is-hazard">
+                                    Info
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">As &lt;a&gt; tag</span>
+                            <div class="flex-row">
+                                <a href="#" class="btn btn-primary"
+                                    >Link button</a
+                                >
+                                <a href="#" class="btn">Link default</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Disabled state</span>
+                            <div class="flex-row">
+                                <button
+                                    class="btn"
+                                    disabled
+                                    style="
+                                        opacity: 0.45;
+                                        cursor: not-allowed;
+                                        box-shadow: none;
+                                    "
+                                >
+                                    Disabled
+                                </button>
+                                <button
+                                    class="btn btn-primary"
+                                    disabled
+                                    style="
+                                        opacity: 0.45;
+                                        cursor: not-allowed;
+                                        box-shadow: none;
+                                    "
+                                >
+                                    Disabled
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 04 Labels ──────────────────────────────────────────── -->
+                <section class="section" id="labels">
+                    <h4 style="margin-bottom: var(--space-6)">Labels</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Variants</span>
+                            <div class="flex-row">
+                                <span class="label">Default</span>
+                                <span class="label label-accent">Accent</span>
+                                <span class="label label-danger">Danger</span>
+                                <span class="label label-success">Success</span>
+                                <span class="label label-warning">Warning</span>
+                                <span class="label label-info">Info</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number"
+                                >In context with text</span
+                            >
+                            <p
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: var(--space-3);
+                                "
+                            >
+                                <span class="label label-accent">New</span>
+                                Feature flags are now available in the
+                                dashboard.
+                                <span class="label label-danger">Breaking</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 05 Cards ───────────────────────────────────────────── -->
+                <section class="section" id="cards">
+                    <h4 style="margin-bottom: var(--space-6)">Cards</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Basic card</span>
+                            <div style="max-width: 340px">
+                                <div class="card">
+                                    <p
+                                        style="
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                            color: var(--mute);
+                                            margin-bottom: var(--space-3);
+                                        "
+                                    >
+                                        COMPONENT / CARD
+                                    </p>
+                                    <h5 style="margin-bottom: var(--space-3)">
+                                        Basic Card
+                                    </h5>
+                                    <p>
+                                        Default card with padding. Background is
+                                        <code>--bone</code>, bordered, flat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Raised card</span>
+                            <div
+                                style="
+                                    max-width: 340px;
+                                    padding-bottom: var(--space-3);
+                                "
+                            >
+                                <div class="card is-raised">
+                                    <h5 style="margin-bottom: var(--space-3)">
+                                        Raised Card
+                                    </h5>
+                                    <p>
+                                        Adds <code>--shadow-md</code> — a hard
+                                        offset shadow anchored to
+                                        <code>--ink</code>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Flush card (image + footer)</span
+                            >
+                            <div
+                                style="
+                                    max-width: 340px;
+                                    padding-bottom: var(--space-3);
+                                "
+                            >
+                                <div class="card card-flush">
+                                    <div
+                                        style="
+                                            background: var(--cell-bg);
+                                            aspect-ratio: 16/9;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            border-bottom: var(--border);
+                                        "
+                                    >
+                                        <span
+                                            style="
+                                                font-family: var(--mono);
+                                                font-size: var(--text-xs);
+                                                color: var(--mute);
+                                            "
+                                            >16 × 9 image</span
+                                        >
+                                    </div>
+                                    <div class="card-body">
+                                        <h5
+                                            style="
+                                                margin-bottom: var(--space-2);
+                                            "
+                                        >
+                                            Card with Image
+                                        </h5>
+                                        <p>
+                                            Flush layout removes outer padding;
+                                            the image bleeds to the edge.
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="flex-row">
+                                            <button
+                                                class="btn btn-primary btn-static"
+                                                style="box-shadow: none"
+                                            >
+                                                Action
+                                            </button>
+                                            <button
+                                                class="btn btn-static"
+                                                style="box-shadow: none"
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Hazard card</span>
+                            <div
+                                style="
+                                    max-width: 340px;
+                                    padding-top: var(--space-2);
+                                "
+                            >
+                                <div class="card is-hazard">
+                                    <h5 style="margin-bottom: var(--space-3)">
+                                        Critical Notice
+                                    </h5>
+                                    <p>
+                                        The hazard stripe draws attention to
+                                        cards that require action.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Grid of cards</span>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card" style="height: 100%">
+                                        <span
+                                            class="label label-accent"
+                                            style="
+                                                margin-bottom: var(--space-3);
+                                            "
+                                            >Module A</span
+                                        >
+                                        <p>
+                                            First grid card. Stretches to fill
+                                            available column height.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card" style="height: 100%">
+                                        <span
+                                            class="label label-info"
+                                            style="
+                                                margin-bottom: var(--space-3);
+                                            "
+                                            >Module B</span
+                                        >
+                                        <p>
+                                            Second grid card with a bit more
+                                            content to show height alignment.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card" style="height: 100%">
+                                        <span
+                                            class="label"
+                                            style="
+                                                margin-bottom: var(--space-3);
+                                            "
+                                            >Module C</span
+                                        >
+                                        <p>
+                                            Third card. Responsive: stacks on
+                                            small screens, 3-up at lg.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 06 Alerts ──────────────────────────────────────────── -->
+                <section class="section" id="alerts">
+                    <h4 style="margin-bottom: var(--space-6)">Alerts</h4>
+                    <div class="section-body">
+                        <div class="stack">
+                            <span class="step-number">Variants</span>
+                            <div class="alert alert-default">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >notifications</span
+                                >
+                                <div>
+                                    <strong>Default:</strong> Neutral system
+                                    message. No semantic color.
+                                </div>
+                            </div>
+                            <div class="alert alert-primary">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >campaign</span
+                                >
+                                <div>
+                                    <strong>Primary:</strong> Accent-colored
+                                    call-out. Use for tips or feature
+                                    highlights.
+                                </div>
+                            </div>
+                            <div class="alert alert-success">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >check_circle</span
+                                >
+                                <div>
+                                    <strong>Success:</strong> Operation
+                                    completed. Deploy finished, record saved.
+                                </div>
+                            </div>
+                            <div class="alert alert-warning">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >warning</span
+                                >
+                                <div>
+                                    <strong>Warning:</strong> Proceed with
+                                    caution. This action may have side effects.
+                                </div>
+                            </div>
+                            <div class="alert alert-error">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >report</span
+                                >
+                                <div>
+                                    <strong>Error:</strong> Something went
+                                    wrong. Check the logs for details.
+                                </div>
+                            </div>
+                            <div class="alert alert-info">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >info</span
+                                >
+                                <div>
+                                    <strong>Info:</strong> Informational
+                                    context. No action required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stack">
+                            <span class="step-number">Raised + hazard</span>
+                            <div class="alert alert-warning is-raised">
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >warning</span
+                                >
+                                <div>
+                                    <strong>Raised warning</strong> with drop
+                                    shadow for extra visual weight.
+                                </div>
+                            </div>
+                            <div
+                                class="alert is-hazard"
+                                style="margin-top: var(--space-2)"
+                            >
+                                <span
+                                    class="material-symbols-outlined alert-icon"
+                                    >report</span
+                                >
+                                <div>
+                                    <strong>Hazard stripe</strong> alert —
+                                    maximum urgency signal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 07 Grid ────────────────────────────────────────────── -->
+                <section class="section" id="grid">
+                    <h4 style="margin-bottom: var(--space-6)">Grid</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number"
+                                >12-column — equal halves</span
+                            >
+                            <div class="row g-4">
+                                <div class="col-6">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-6
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Thirds</span>
+                            <div class="row g-4">
+                                <div class="col-4">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-4
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-4
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-4
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Sidebar layout (8 / 4)</span
+                            >
+                            <div class="row g-4">
+                                <div class="col-8">
+                                    <div
+                                        class="card"
+                                        style="
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-8 — main content
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div
+                                        class="card"
+                                        style="
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        .col-4 — sidebar
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Responsive — stacks below md</span
+                            >
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        col-md-6 col-lg-3
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        col-md-6 col-lg-3
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        col-md-6 col-lg-3
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div
+                                        class="card"
+                                        style="
+                                            text-align: center;
+                                            font-family: var(--mono);
+                                            font-size: var(--text-xs);
+                                        "
+                                    >
+                                        col-md-6 col-lg-3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 08 Modal ───────────────────────────────────────────── -->
+                <section class="section" id="modal">
+                    <h4 style="margin-bottom: var(--space-6)">Modal</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Triggers</span>
+                            <div class="flex-row">
+                                <button
+                                    class="btn btn-primary"
+                                    data-fw-toggle="modal"
+                                    data-fw-target="#modal-basic"
+                                >
+                                    Open Modal
+                                </button>
+                                <button
+                                    class="btn btn-danger btn-static"
+                                    data-fw-toggle="modal"
+                                    data-fw-target="#modal-sm"
+                                >
+                                    Open Small
+                                </button>
+                                <button
+                                    class="btn btn-info btn-static"
+                                    data-fw-toggle="modal"
+                                    data-fw-target="#modal-lg"
+                                >
+                                    Open Large
+                                </button>
+                            </div>
+                        </div>
+                        <div class="alert alert-default">
+                            <span class="material-symbols-outlined alert-icon"
+                                >info</span
+                            >
+                            <div>
+                                Click outside the dialog, press
+                                <kbd>Escape</kbd>, or use the dismiss button to
+                                close.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 09 Dropdown ────────────────────────────────────────── -->
+                <section class="section" id="dropdown">
+                    <h4 style="margin-bottom: var(--space-6)">Dropdown</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Default dropdown</span>
+                            <div
+                                class="flex-row-start"
+                                style="padding-bottom: var(--space-8)"
+                            >
+                                <div
+                                    class="dropdown"
+                                    data-fw-component="dropdown"
+                                >
+                                    <button class="btn dropdown-toggle">
+                                        Options
+                                        <span
+                                            class="material-symbols-outlined dropdown-chevron"
+                                            >expand_more</span
+                                        >
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu"
+                                        style="display: none"
+                                    >
+                                        <li>
+                                            <span class="dropdown-header"
+                                                >Section</span
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Edit record</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Duplicate</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="dropdown-item is-active"
+                                                >Active item</a
+                                            >
+                                        </li>
+                                        <hr class="dropdown-divider" />
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Export CSV</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="#"
+                                                class="dropdown-item is-disabled"
+                                                >Disabled item</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="dropdown"
+                                    data-fw-component="dropdown"
+                                >
+                                    <button
+                                        class="btn btn-primary dropdown-toggle"
+                                    >
+                                        Primary
+                                        <span
+                                            class="material-symbols-outlined dropdown-chevron"
+                                            >expand_more</span
+                                        >
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu align-end"
+                                        style="display: none"
+                                    >
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Deploy to staging</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Deploy to production</a
+                                            >
+                                        </li>
+                                        <hr class="dropdown-divider" />
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Rollback</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="dropdown is-flat"
+                                    data-fw-component="dropdown"
+                                >
+                                    <button class="btn dropdown-toggle">
+                                        Flat
+                                        <span
+                                            class="material-symbols-outlined dropdown-chevron"
+                                            >expand_more</span
+                                        >
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu"
+                                        style="display: none"
+                                    >
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Item one</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Item two</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Split button dropdown</span
+                            >
+                            <div style="padding-bottom: var(--space-6)">
+                                <div
+                                    class="dropdown dropdown-split"
+                                    data-fw-component="dropdown"
+                                >
+                                    <button class="btn btn-primary">
+                                        Deploy
+                                    </button>
+                                    <button
+                                        class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                    >
+                                        <span
+                                            class="material-symbols-outlined dropdown-chevron"
+                                            >expand_more</span
+                                        >
+                                    </button>
+                                    <ul
+                                        class="dropdown-menu"
+                                        style="display: none"
+                                    >
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Deploy to staging</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Deploy to production</a
+                                            >
+                                        </li>
+                                        <hr class="dropdown-divider" />
+                                        <li>
+                                            <a href="#" class="dropdown-item"
+                                                >Rollback</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 10 Accordion ───────────────────────────────────────── -->
+                <section class="section" id="accordion">
+                    <h4 style="margin-bottom: var(--space-6)">Accordion</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number"
+                                >Standard accordion (only one open at a
+                                time)</span
+                            >
+                            <div class="accordion" data-fw-accordion>
+                                <div
+                                    class="accordion-item"
+                                    data-fw-component="accordion"
+                                    data-fw-open="true"
+                                >
+                                    <div class="accordion-header">
+                                        <button class="accordion-btn">
+                                            What is CassetteCSS?
+                                            <span
+                                                class="material-symbols-outlined accordion-chevron"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <div class="accordion-body">
+                                        CassetteCSS is a distributable CSS
+                                        framework built with Sass and vanilla
+                                        JS. Drop in a single
+                                        <code>&lt;link&gt;</code> and
+                                        <code>&lt;script&gt;</code> tag — no
+                                        build step required on the consumer end.
+                                    </div>
+                                </div>
+                                <div
+                                    class="accordion-item"
+                                    data-fw-component="accordion"
+                                >
+                                    <div class="accordion-header">
+                                        <button class="accordion-btn">
+                                            How do I customize the design
+                                            tokens?
+                                            <span
+                                                class="material-symbols-outlined accordion-chevron"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <div class="accordion-body">
+                                        All tokens are CSS custom properties on
+                                        <code>:root</code>. Override them in
+                                        your own stylesheet after the framework
+                                        link — no Sass required. For example:
+                                        <code
+                                            >:root { --accent: #7c3aed; }</code
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="accordion-item"
+                                    data-fw-component="accordion"
+                                >
+                                    <div class="accordion-header">
+                                        <button class="accordion-btn">
+                                            Which browsers are supported?
+                                            <span
+                                                class="material-symbols-outlined accordion-chevron"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <div class="accordion-body">
+                                        All modern evergreen browsers. The
+                                        framework uses CSS custom properties,
+                                        CSS Grid, and ES modules — no IE11
+                                        support.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Flush accordion</span>
+                            <div
+                                class="accordion accordion-flush"
+                                data-fw-accordion
+                            >
+                                <div
+                                    class="accordion-item"
+                                    data-fw-component="accordion"
+                                >
+                                    <div class="accordion-header">
+                                        <button class="accordion-btn">
+                                            Flush item one
+                                            <span
+                                                class="material-symbols-outlined accordion-chevron"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <div class="accordion-body">
+                                        No outer border. Items are separated
+                                        only by a bottom rule.
+                                    </div>
+                                </div>
+                                <div
+                                    class="accordion-item"
+                                    data-fw-component="accordion"
+                                >
+                                    <div class="accordion-header">
+                                        <button class="accordion-btn">
+                                            Flush item two
+                                            <span
+                                                class="material-symbols-outlined accordion-chevron"
+                                                >expand_more</span
+                                            >
+                                        </button>
+                                    </div>
+                                    <div class="accordion-body">
+                                        Content for the second flush item.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 11 Forms ───────────────────────────────────────────── -->
+                <section class="section" id="forms">
+                    <h4 style="margin-bottom: var(--space-6)">Forms</h4>
+                    <div class="section-body">
+                        <div class="stack" style="max-width: 480px">
+                            <span class="step-number">Text inputs</span>
+                            <div class="field">
+                                <label
+                                    style="
+                                        font-family: var(--mono);
+                                        font-size: var(--text-xs);
+                                        letter-spacing: var(--tracking-wide);
+                                        text-transform: uppercase;
+                                    "
+                                    >Username</label
+                                >
+                                <input
+                                    type="text"
+                                    placeholder="e.g. thomas_cole"
+                                />
+                            </div>
+                            <div class="field">
+                                <label
+                                    style="
+                                        font-family: var(--mono);
+                                        font-size: var(--text-xs);
+                                        letter-spacing: var(--tracking-wide);
+                                        text-transform: uppercase;
+                                    "
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    placeholder="you@example.com"
+                                />
+                            </div>
+                            <div class="field">
+                                <label
+                                    style="
+                                        font-family: var(--mono);
+                                        font-size: var(--text-xs);
+                                        letter-spacing: var(--tracking-wide);
+                                        text-transform: uppercase;
+                                    "
+                                    >Message</label
+                                >
+                                <textarea
+                                    rows="4"
+                                    placeholder="Type your message…"
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <div class="stack" style="max-width: 480px">
+                            <span class="step-number">Select</span>
+                            <div class="field">
+                                <label
+                                    style="
+                                        font-family: var(--mono);
+                                        font-size: var(--text-xs);
+                                        letter-spacing: var(--tracking-wide);
+                                        text-transform: uppercase;
+                                    "
+                                    >Environment</label
+                                >
+                                <select>
+                                    <option>Production</option>
+                                    <option>Staging</option>
+                                    <option>Development</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number"
+                                >Checkboxes &amp; radios</span
+                            >
+                            <div class="stack-sm">
+                                <label class="check-label"
+                                    ><input type="checkbox" checked /> Enable
+                                    notifications</label
+                                >
+                                <label class="check-label"
+                                    ><input type="checkbox" /> Auto-deploy on
+                                    merge</label
+                                >
+                                <label class="check-label"
+                                    ><input type="checkbox" disabled /> Locked
+                                    setting</label
+                                >
+                            </div>
+                            <div
+                                class="stack-sm"
+                                style="margin-top: var(--space-4)"
+                            >
+                                <label class="check-label"
+                                    ><input type="radio" name="env" checked />
+                                    Production</label
+                                >
+                                <label class="check-label"
+                                    ><input type="radio" name="env" />
+                                    Staging</label
+                                >
+                                <label class="check-label"
+                                    ><input type="radio" name="env" disabled />
+                                    Disabled</label
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 12 Progress ────────────────────────────────────────── -->
+                <section class="section" id="progress">
+                    <h4 style="margin-bottom: var(--space-6)">Progress</h4>
+                    <div class="section-body">
+                        <div class="stack">
+                            <span class="step-number">Determinate bars</span>
+                            <div class="meter-row">
+                                <span class="meter-name">default</span>
+                                <div
+                                    class="progress"
+                                    style="--progress-value: 65%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">65%</span>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">primary</span>
+                                <div
+                                    class="progress progress-primary"
+                                    style="--progress-value: 80%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">80%</span>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">success</span>
+                                <div
+                                    class="progress progress-success"
+                                    style="--progress-value: 100%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">100%</span>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">warning</span>
+                                <div
+                                    class="progress progress-warning"
+                                    style="--progress-value: 42%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">42%</span>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">danger</span>
+                                <div
+                                    class="progress progress-danger"
+                                    style="--progress-value: 18%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">18%</span>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">disabled</span>
+                                <div
+                                    class="progress progress-disabled"
+                                    style="--progress-value: 33%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <span class="meter-val">33%</span>
+                            </div>
+                        </div>
+
+                        <div class="stack">
+                            <span class="step-number"
+                                >Indeterminate &amp; striped</span
+                            >
+                            <div class="meter-row">
+                                <span class="meter-name">indet.</span>
+                                <div
+                                    class="progress progress-primary is-indeterminate"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">striped</span>
+                                <div
+                                    class="progress progress-success is-striped"
+                                    style="--progress-value: 70%"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <span class="meter-name">both</span>
+                                <div
+                                    class="progress progress-warning is-indeterminate is-striped"
+                                >
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-number">Range sliders</span>
+                            <div class="stack">
+                                <div class="meter-row">
+                                    <span class="meter-name">default</span>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="50"
+                                        class="js-range"
+                                    />
+                                </div>
+                                <div class="meter-row">
+                                    <span class="meter-name">primary</span>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="75"
+                                        class="range-primary js-range"
+                                    />
+                                </div>
+                                <div class="meter-row">
+                                    <span class="meter-name">success</span>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="90"
+                                        class="range-success js-range"
+                                    />
+                                </div>
+                                <div class="meter-row">
+                                    <span class="meter-name">disabled</span>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="30"
+                                        disabled
+                                        class="range-disabled js-range"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 13 Table ───────────────────────────────────────────── -->
+                <section class="section" id="table">
+                    <h4 style="margin-bottom: var(--space-6)">Table</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number"
+                                >Data table with progress column</span
+                            >
+                            <div class="table-wrap">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Service</th>
+                                            <th>Environment</th>
+                                            <th>Status</th>
+                                            <th>Uptime</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="td-name">api-gateway</td>
+                                            <td>Production</td>
+                                            <td>
+                                                <span
+                                                    class="label label-success"
+                                                    >Healthy</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <div class="table-progress">
+                                                    <div
+                                                        class="progress progress-success"
+                                                        style="
+                                                            --progress-value: 99.9%;
+                                                        "
+                                                    >
+                                                        <div
+                                                            class="progress-fill"
+                                                        ></div>
+                                                    </div>
+                                                    <span
+                                                        class="table-progress-val"
+                                                        >99.9%</span
+                                                    >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-name">worker-jobs</td>
+                                            <td>Production</td>
+                                            <td>
+                                                <span
+                                                    class="label label-warning"
+                                                    >Degraded</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <div class="table-progress">
+                                                    <div
+                                                        class="progress progress-warning"
+                                                        style="
+                                                            --progress-value: 78%;
+                                                        "
+                                                    >
+                                                        <div
+                                                            class="progress-fill"
+                                                        ></div>
+                                                    </div>
+                                                    <span
+                                                        class="table-progress-val"
+                                                        >78%</span
+                                                    >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-name">
+                                                image-resize
+                                            </td>
+                                            <td>Staging</td>
+                                            <td>
+                                                <span class="label label-danger"
+                                                    >Down</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <div class="table-progress">
+                                                    <div
+                                                        class="progress progress-danger"
+                                                        style="
+                                                            --progress-value: 12%;
+                                                        "
+                                                    >
+                                                        <div
+                                                            class="progress-fill"
+                                                        ></div>
+                                                    </div>
+                                                    <span
+                                                        class="table-progress-val"
+                                                        >12%</span
+                                                    >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-name">analytics</td>
+                                            <td>Production</td>
+                                            <td>
+                                                <span class="label">Idle</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-progress">
+                                                    <div
+                                                        class="progress"
+                                                        style="
+                                                            --progress-value: 100%;
+                                                        "
+                                                    >
+                                                        <div
+                                                            class="progress-fill"
+                                                        ></div>
+                                                    </div>
+                                                    <span
+                                                        class="table-progress-val"
+                                                        >100%</span
+                                                    >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="height: var(--space-10)"></div>
+            </main>
+        </div>
+
+        <!-- ── Footer ────────────────────────────────────────────────────── -->
+        <footer class="footer">
+            <div
+                class="container-fluid"
+                style="
+                    padding-right: var(--space-6);
+                    padding-left: var(--space-6);
+                "
+            >
+                <div class="footer-inner">
+                    <span class="footer-brand">CassetteCSS v1.0</span>
+                    <div class="footer-links" style="gap: var(--space-2)">
+                        <span class="footer-brand" style="color: var(--mute)">
+                            Styles inspired by
+                        </span>
+                        <a
+                            href="https://antimatter-studios.github.io/diskcutter/"
+                            class="footer-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Diskcutter
+                            <span
+                                class="material-symbols-outlined"
+                                style="font-size: 0.9em; vertical-align: middle"
+                                >open_in_new</span
+                            >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ── Modals (portals at body level) ─────────────────────────── -->
+        <div
+            class="modal-backdrop"
+            id="modal-basic"
+            data-fw-component="modal"
+            style="display: none"
+        >
+            <div class="modal">
+                <div class="modal-header">
+                    <span class="modal-title">Confirm Deployment</span>
+                    <button
+                        class="modal-close"
+                        data-fw-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: var(--space-4)">
+                        You are about to deploy
+                        <strong>api-gateway v2.4.1</strong> to production. This
+                        will cause a rolling restart across all nodes.
+                    </p>
+                    <div class="alert alert-warning">
+                        <span class="material-symbols-outlined alert-icon"
+                            >warning</span
+                        >
+                        <div>
+                            Estimated downtime:
+                            <strong>~30 seconds</strong> during the restart
+                            window.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-static" data-fw-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-primary">Deploy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal-backdrop"
+            id="modal-sm"
+            data-fw-component="modal"
+            style="display: none"
+        >
+            <div class="modal modal-sm">
+                <div class="modal-header">
+                    <span class="modal-title">Delete Record</span>
+                    <button
+                        class="modal-close"
+                        data-fw-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This action cannot be undone. The record will be
+                        permanently deleted.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-static" data-fw-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button class="btn btn-danger btn-static">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="modal-backdrop"
+            id="modal-lg"
+            data-fw-component="modal"
+            style="display: none"
+        >
+            <div class="modal modal-lg">
+                <div class="modal-header">
+                    <span class="modal-title">System Report</span>
+                    <button
+                        class="modal-close"
+                        data-fw-dismiss="modal"
+                        aria-label="Close"
+                    >
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: var(--space-4)">
+                        Large modal for displaying detailed content, dashboards,
+                        or multi-step flows.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="card">
+                                <span
+                                    class="label label-success"
+                                    style="margin-bottom: var(--space-3)"
+                                    >Services</span
+                                >
+                                <p>12 of 13 services healthy.</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <span
+                                    class="label label-warning"
+                                    style="margin-bottom: var(--space-3)"
+                                    >Alerts</span
+                                >
+                                <p>2 active alerts in staging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-static" data-fw-dismiss="modal">
+                        Close
+                    </button>
+                    <button class="btn btn-primary">Export Report</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="./js/cassettecss.js"></script>
+        <script>
+            // Range fill sync
+            document.querySelectorAll(".js-range").forEach((range) => {
+                const update = () => {
+                    const pct =
+                        ((range.value - range.min) / (range.max - range.min)) *
+                        100;
+                    range.style.setProperty("--range-fill", pct + "%");
+                };
+                range.addEventListener("input", update);
+                update();
+            });
+
+            // Sidenav scrollspy
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".sidenav-link");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach((l) =>
+                                l.classList.remove("is-active"),
+                            );
+                            const active = document.querySelector(
+                                `.sidenav-link[href="#${entry.target.id}"]`,
+                            );
+                            active?.classList.add("is-active");
+                        }
+                    });
+                },
+                { rootMargin: "-20% 0px -70% 0px" },
+            );
+            sections.forEach((s) => observer.observe(s));
+        </script>
+    </body>
+</html>

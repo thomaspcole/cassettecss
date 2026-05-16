@@ -1,0 +1,24 @@
+{
+  "name": "cassettecss",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.70.0"
+  },
+  "main": "dist/cassettecss.umd.js",
+  "module": "dist/cassettecss.es.js",
+  "style": "dist/cassettecss.css",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": "./dist/cassettecss.es.js",
+      "require": "./dist/cassettecss.umd.js"
+    },
+    "./dist/cassettecss.css": "./dist/cassettecss.css"
+  }
+}
