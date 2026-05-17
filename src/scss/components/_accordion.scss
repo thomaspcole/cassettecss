@@ -33,8 +33,8 @@
         &:hover { background: var(--sidebar-bg); }
 
         &.is-open {
-            background: var(--ink);
-            color: var(--on-accent);
+            background: var(--surface-inverse);
+            color: var(--text-inverse);
         }
     }
 

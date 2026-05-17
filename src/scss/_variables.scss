@@ -1,12 +1,31 @@
+@mixin dark-tokens {
+    --paper:      #111009;
+    --bone:       #1c1a16;
+    --ink:        #ede8db;
+    --ink-2:      #c8c2b4;
+    --mute:       #7a7570;
+    --warn-bg:    #1f1708;
+    --sidebar-bg: #201e1a;
+    --cell-bg:    #2a2824;
+    --disabled:   #4a4742;
+    --accent-2:   #4d9ef5;
+    --ok:         #5caa3e;
+    --warn:       #cc9e20;
+    --surface-inverse: #0c0c0b;
+    --text-inverse: #ede8db;
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23ede8db'/%3E%3C/svg%3E");
+    color-scheme: dark;
+}
+
 :root {
     /* ── Base surfaces ── */
-    --bone: #f1ede2; /* primary canvas */
-    --paper: #faf8f1; /* secondary surface */
-    --ink: #0c0c0b; /* primary text + rule */
+    --bone: #f1ede2;
+    --paper: #faf8f1;
+    --ink: #0c0c0b;
     --ink-2: #2a2823;
     --rule: var(--ink);
     --mute: #8a857a;
-    --on-accent: #ffffff; /* text on accent surfaces */
+    --on-accent: #ffffff;
 
     /* ── Status surfaces ── */
     --warn-bg: #fff5d6;
@@ -17,11 +36,18 @@
     /* ── Brand / accent ── */
     --accent: #ff4a17;
     --hazard: #e5151b;
-    --accent-2: #1f6feb; /* compute blue */
+    --accent-2: #1f6feb;
 
     /* ── Validation ── */
     --ok: #4b8a3a;
     --warn: #b88a1a;
+
+    /* ── Inverted surface (accordion header open, table header) ── */
+    --surface-inverse: #0c0c0b;
+    --text-inverse: #ffffff;
+
+    /* ── Select arrow ── */
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%230c0c0b'/%3E%3C/svg%3E");
 
     /* ── Typography ── */
     --line: 2px;
@@ -30,15 +56,15 @@
     --display:
         "Space Grotesk", "Helvetica Neue", Helvetica, system-ui, sans-serif;
 
-    --text-xs: 0.6875rem; /* 11px */
-    --text-sm: 0.8125rem; /* 13px */
-    --text-base: 0.9375rem; /* 15px */
-    --text-lg: 1.125rem; /* 18px */
-    --text-xl: 1.375rem; /* 22px */
-    --text-2xl: 1.75rem; /* 28px */
-    --text-3xl: 2.25rem; /* 36px */
-    --text-4xl: 3rem; /* 48px */
-    --text-5xl: 4rem; /* 64px */
+    --text-xs: 0.6875rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.9375rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.375rem;
+    --text-2xl: 1.75rem;
+    --text-3xl: 2.25rem;
+    --text-4xl: 3rem;
+    --text-5xl: 4rem;
 
     --leading-tight: 1.1;
     --leading-normal: 1.5;
@@ -71,7 +97,7 @@
     /* ── Layout ── */
     --container-padding: var(--space-5);
     --section-pad-y: var(--space-4);
-    --navbar-h: 54px; /* 52px inner + 2px border */
+    --navbar-h: 54px;
     --sidenav-w: 180px;
 
     /* ── Borders ── */
@@ -85,4 +111,10 @@
     --ease: cubic-bezier(0.2, 0, 0, 1);
     --duration-fast: 100ms;
     --duration-base: 180ms;
+
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    @include dark-tokens;
 }

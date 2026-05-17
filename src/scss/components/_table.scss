@@ -8,7 +8,7 @@
     border-collapse: collapse;
     font-size: var(--text-sm);
 
-    thead tr { background: var(--ink); }
+    thead tr { background: var(--surface-inverse); }
 
     th {
         text-align: left;
@@ -17,7 +17,7 @@
         font-size: var(--text-xs);
         letter-spacing: var(--tracking-widest);
         text-transform: uppercase;
-        color: var(--on-accent);
+        color: var(--text-inverse);
         font-weight: 700;
         white-space: nowrap;
 
