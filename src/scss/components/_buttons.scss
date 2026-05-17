@@ -1,0 +1,89 @@
+@use 'sass:list';
+
+// (text-color, hover-bg, hover-text)
+$btn-variants: (
+    "danger":  (var(--hazard),   var(--hazard),   var(--on-accent)),
+    "success": (var(--ok),       var(--ok),        var(--on-accent)),
+    "warning": (var(--warn),     var(--warn),      var(--on-accent)),
+    "info":    (var(--accent-2), var(--accent-2),  var(--on-accent)),
+);
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    padding: var(--space-3) var(--space-5);
+    border: var(--line) solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition:
+        background var(--duration-fast) var(--ease),
+        color var(--duration-fast) var(--ease),
+        box-shadow var(--duration-fast) var(--ease),
+        transform var(--duration-fast) var(--ease);
+    user-select: none;
+
+    &:hover {
+        text-decoration: none;
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--ink);
+    }
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+
+    &:hover {
+        background: var(--paper);
+        color: var(--accent);
+        box-shadow: 6px 6px 0 var(--ink);
+    }
+}
+
+@each $name, $values in $btn-variants {
+    .btn-#{$name} {
+        color: list.nth($values, 1);
+
+        &:hover {
+            background: list.nth($values, 2);
+            color: list.nth($values, 3);
+            box-shadow: 6px 6px 0 var(--ink);
+        }
+    }
+}
+
+.btn-static {
+    box-shadow: none;
+
+    &:hover {
+        background: var(--ink);
+        color: var(--paper);
+        transform: none;
+        box-shadow: none;
+    }
+
+    &.btn-primary:hover {
+        background: var(--paper);
+        color: var(--accent);
+        transform: none;
+        box-shadow: none;
+    }
+
+    @each $name, $values in $btn-variants {
+        &.btn-#{$name}:hover {
+            background: list.nth($values, 2);
+            color: list.nth($values, 3);
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}

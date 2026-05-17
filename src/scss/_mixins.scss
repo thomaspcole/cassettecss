@@ -1,0 +1,14 @@
+@mixin flush-grid($cols: 3) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: 0;
+    border-top: var(--border);
+    border-left: var(--border);
+}
+
+@mixin flush-grid-item {
+    border-top: none;
+    border-left: none;
+    border-right: var(--border);
+    border-bottom: var(--border);
+}

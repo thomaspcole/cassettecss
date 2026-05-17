@@ -1,0 +1,51 @@
+$hazard-btn-borders: (
+    "primary": var(--accent),
+    "danger":  var(--hazard),
+    "success": var(--ok),
+    "warning": var(--warn),
+    "info":    var(--accent-2),
+);
+
+$hazard-alert-borders: (
+    "primary": var(--accent),
+    "error":   var(--hazard),
+    "warning": var(--warn),
+    "info":    var(--accent-2),
+    "success": var(--ok),
+);
+
+.is-hazard {
+    position: relative;
+    --hazard-border: var(--ink);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: repeating-linear-gradient(
+            -45deg,
+            var(--accent) 0px,
+            var(--accent) 10px,
+            var(--ink) 10px,
+            var(--ink) 20px
+        );
+        border-bottom: var(--line) solid var(--hazard-border);
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.btn.is-hazard   { padding-top: calc(var(--space-3) + 8px); }
+.card.is-hazard  { padding-top: calc(var(--space-5) + 8px); }
+.alert.is-hazard { padding-top: calc(var(--space-4) + 8px); }
+
+@each $name, $color in $hazard-btn-borders {
+    .btn-#{$name}.is-hazard { --hazard-border: #{$color}; }
+}
+
+@each $name, $color in $hazard-alert-borders {
+    .alert-#{$name}.is-hazard { --hazard-border: #{$color}; }
+}

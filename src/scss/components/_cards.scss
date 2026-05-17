@@ -1,0 +1,41 @@
+.card,
+.card-body {
+    p { max-width: 100%; }
+}
+
+.card {
+    background: var(--bone);
+    border: var(--border);
+    padding: var(--space-5);
+    transition:
+        box-shadow var(--duration-base) var(--ease),
+        border-color var(--duration-base) var(--ease);
+
+    &.is-raised { box-shadow: var(--shadow-md); }
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: var(--border);
+}
+
+.card-body {
+    padding: var(--space-5);
+    flex: 1;
+}
+
+.card-flush {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    padding: var(--space-4) var(--space-5);
+    border-top: var(--border);
+    background: var(--sidebar-bg);
+}

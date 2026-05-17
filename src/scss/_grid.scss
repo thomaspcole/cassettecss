@@ -1,0 +1,43 @@
+$breakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+.row {
+    --gutter: var(--space-5);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+}
+
+.g-0 { --gutter: 0; }
+.g-3 { --gutter: var(--space-3); }
+.g-4 { --gutter: var(--space-4); }
+.g-6 { --gutter: var(--space-6); }
+.g-7 { --gutter: var(--space-7); }
+.g-8 { --gutter: var(--space-8); }
+
+.col { grid-column: span 12; }
+
+@for $i from 1 through 12 {
+    .col-#{$i} { grid-column: span $i; }
+}
+
+[class*="col-sm-"],
+[class*="col-md-"],
+[class*="col-lg-"],
+[class*="col-xl-"],
+[class*="col-xxl-"] {
+    grid-column: span 12;
+}
+
+@each $name, $bp in $breakpoints {
+    @media (min-width: #{$bp}) {
+        @for $i from 1 through 12 {
+            .col-#{$name}-#{$i} { grid-column: span $i; }
+        }
+    }
+}

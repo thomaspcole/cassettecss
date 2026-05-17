@@ -13,12 +13,23 @@ export class Accordion {
 
   _init() {
     if (!this.btn || !this.body) return
-    if (!this._isOpen) {
-      this.body.style.display = 'none'
-    } else {
+
+    // Move body content into an inner div — padding/border live there so they
+    // collapse inside the CSS grid row instead of leaking out as a visible bar
+    const inner = document.createElement('div')
+    inner.className = 'accordion-body-inner'
+    while (this.body.firstChild) inner.appendChild(this.body.firstChild)
+    this.body.appendChild(inner)
+
+    if (this._isOpen) {
+      // Apply open state without triggering the transition on load
+      this.body.style.transition = 'none'
+      this.el.classList.add('is-open')
       this.btn.classList.add('is-open')
       this.chevron?.classList.add('is-open')
+      requestAnimationFrame(() => { this.body.style.transition = '' })
     }
+
     on(this.btn, 'click', () => this.toggle())
   }
 
@@ -27,10 +38,11 @@ export class Accordion {
   }
 
   open() {
-    this.body.style.display = 'block'
     this._isOpen = true
+    this.el.classList.add('is-open')
     this.btn.classList.add('is-open')
     this.chevron?.classList.add('is-open')
+
     const group = this.el.closest('[data-fw-accordion]')
     if (group) {
       $$('[data-fw-component="accordion"]', group).forEach(item => {
@@ -41,8 +53,8 @@ export class Accordion {
   }
 
   close() {
-    this.body.style.display = 'none'
     this._isOpen = false
+    this.el.classList.remove('is-open')
     this.btn.classList.remove('is-open')
     this.chevron?.classList.remove('is-open')
     this.el.dispatchEvent(new CustomEvent('fw:accordion:close'))

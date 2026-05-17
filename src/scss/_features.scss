@@ -1,0 +1,54 @@
+@use 'mixins' as *;
+
+.features {
+    &-header {
+        margin-bottom: var(--space-7);
+
+        .label { margin-bottom: var(--space-4); }
+    }
+
+    &-headline {
+        font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+        margin-bottom: var(--space-4);
+        max-width: 20ch;
+    }
+
+    &-intro {
+        font-size: var(--text-base);
+        max-width: 60ch;
+    }
+
+    &-grid {
+        @include flush-grid(3);
+
+        @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 540px) { grid-template-columns: 1fr; }
+    }
+
+    &-card {
+        @include flush-grid-item;
+        padding: var(--space-6) var(--space-5);
+        background: transparent;
+
+        &:hover {
+            background: var(--bone);
+            border-color: var(--rule);
+            box-shadow: none;
+        }
+    }
+
+    &-card-title {
+        font-size: var(--text-base);
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: var(--space-3);
+        color: var(--ink);
+    }
+
+    &-card-body {
+        font-size: var(--text-sm);
+        color: var(--mute);
+        line-height: var(--leading-loose);
+        max-width: 100%;
+    }
+}
