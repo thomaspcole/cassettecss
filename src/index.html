@@ -1366,12 +1366,19 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
                                         letter-spacing: var(--tracking-wide);
                                         text-transform: uppercase;
                                     "
-                                    >Environment</label
+                                    >Deploy target</label
                                 >
-                                <select>
-                                    <option>Production</option>
-                                    <option>Staging</option>
-                                    <option>Development</option>
+                                <select
+                                    data-fw-component="custom-select"
+                                    name="deploy-target"
+                                >
+                                    <option value="">Choose a target…</option>
+                                    <option value="prod">Production</option>
+                                    <option value="staging">Staging</option>
+                                    <option value="dev">Development</option>
+                                    <option value="dr" disabled>
+                                        DR (disabled)
+                                    </option>
                                 </select>
                             </div>
                         </div>
