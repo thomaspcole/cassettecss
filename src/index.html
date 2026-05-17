@@ -35,7 +35,9 @@
                 display: flex;
                 align-items: center;
             }
-            #theme-toggle:hover { color: var(--ink); }
+            #theme-toggle:hover {
+                color: var(--ink);
+            }
         </style>
     </head>
     <body>
@@ -50,20 +52,36 @@
             >
                 <div class="navbar-inner">
                     <a href="#" class="navbar-brand">
+                        <img
+                            src="./logos/cassettecss-mark.svg"
+                            alt="CassetteCSS"
+                            width="28"
+                            height="28"
+                        />
                         <span
-                            class="material-symbols-outlined navbar-brand-icon"
-                            >graphic_eq</span
+                            >cassette<span style="color: var(--accent)"
+                                >css</span
+                            ></span
                         >
-                        CassetteCSS
                     </a>
                     <div class="navbar-links"></div>
-                    <span class="navbar-version" style="margin-left: auto; display: flex; align-items: center; gap: var(--space-3);">
+                    <span
+                        class="navbar-version"
+                        style="
+                            margin-left: auto;
+                            display: flex;
+                            align-items: center;
+                            gap: var(--space-3);
+                        "
+                    >
                         <button
                             id="theme-toggle"
                             class="material-symbols-outlined"
                             aria-label="Toggle color theme"
                             title="Toggle theme"
-                        >dark_mode</button>
+                        >
+                            dark_mode
+                        </button>
                         <span class="label">v1.0</span>
                     </span>
                 </div>
