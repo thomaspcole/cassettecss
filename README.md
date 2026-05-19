@@ -10,6 +10,21 @@
 
 ---
 
+## Installation
+
+### CDN (recommended)
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thomaspcole/cassettecss@latest/dist/cassettecss.css" />
+<script type="module" src="https://cdn.jsdelivr.net/gh/thomaspcole/cassettecss@latest/dist/cassettecss.es.js"></script>
+```
+
+### Download
+
+Grab the compiled files from the [latest release](https://github.com/thomaspcole/cassettecss/releases/latest).
+
+---
+
 ## What is this?
 
 Saw [Disk Cutter](https://antimatter-studios.github.io/diskcutter/) on Reddit and immediately wanted it as a CSS theme. CassetteCSS is the result — a component library built around that aesthetic: cassette-tape warmth, brutalist structure, and a strictly mechanical type stack.

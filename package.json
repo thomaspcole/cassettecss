@@ -1,10 +1,19 @@
 {
   "name": "cassettecss",
   "version": "0.1.0",
+  "description": "A brutalist UI framework with a cassette-tape aesthetic — warm paper tones, hard edges, and orange accent.",
+  "keywords": ["css", "framework", "ui", "brutalist", "sass", "components"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomaspcole/cassettecss.git"
+  },
+  "homepage": "https://github.com/thomaspcole/cassettecss#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "vite": "^5.0.0",
