@@ -1,0 +1,27 @@
+// Square-based brutalist spinner — no border-radius, hard geometry
+.spinner {
+    --spinner-size: 24px;
+    --spinner-color: var(--ink);
+    display: inline-block;
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    border: 3px solid var(--spinner-color);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    animation: spinner-rotate 0.65s linear infinite;
+    flex-shrink: 0;
+
+    &-sm { --spinner-size: 16px; border-width: 2px; }
+    &-lg { --spinner-size: 40px; border-width: 4px; }
+
+    &-accent  { --spinner-color: var(--accent); }
+    &-success { --spinner-color: var(--ok); }
+    &-warning { --spinner-color: var(--warn); }
+    &-danger  { --spinner-color: var(--hazard); }
+    &-info    { --spinner-color: var(--accent-2); }
+    &-invert  { --spinner-color: var(--text-inverse); }
+}
+
+@keyframes spinner-rotate {
+    to { transform: rotate(360deg); }
+}

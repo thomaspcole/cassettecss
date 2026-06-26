@@ -1,0 +1,25 @@
+.btn-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: var(--border);
+    cursor: pointer;
+    color: var(--mute);
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    transition:
+        color var(--duration-fast) var(--ease),
+        background var(--duration-fast) var(--ease);
+
+    &:hover {
+        color: var(--ink);
+        background: var(--bone);
+    }
+
+    &-sm { width: 20px; height: 20px; }
+    &-lg { width: 36px; height: 36px; }
+}

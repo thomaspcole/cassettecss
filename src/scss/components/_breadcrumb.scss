@@ -1,0 +1,33 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    color: var(--mute);
+
+    a {
+        color: var(--ink);
+        text-decoration: none;
+
+        &:hover { color: var(--accent); }
+    }
+
+    + .breadcrumb-item::before {
+        content: '/';
+        margin: 0 var(--space-2);
+        color: var(--disabled);
+    }
+
+    &.is-active { color: var(--mute); }
+}
