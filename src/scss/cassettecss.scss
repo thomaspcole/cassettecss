@@ -14,6 +14,14 @@
 @use 'components/accordion';
 @use 'components/table';
 @use 'components/modal';
+@use 'components/breadcrumb';
+@use 'components/pagination';
+@use 'components/tabs';
+@use 'components/spinner';
+@use 'components/toast';
+@use 'components/list-group';
+@use 'components/close-button';
+@use 'components/placeholder';
 @use 'utilities';
 @use 'navbar';
 @use 'hero';

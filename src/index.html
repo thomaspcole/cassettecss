@@ -131,6 +131,30 @@
                 <a href="#table" class="sidenav-link"
                     ><span class="sidenav-num">13</span> Table</a
                 >
+                <a href="#breadcrumb" class="sidenav-link"
+                    ><span class="sidenav-num">14</span> Breadcrumb</a
+                >
+                <a href="#pagination" class="sidenav-link"
+                    ><span class="sidenav-num">15</span> Pagination</a
+                >
+                <a href="#tabs" class="sidenav-link"
+                    ><span class="sidenav-num">16</span> Tabs</a
+                >
+                <a href="#spinner" class="sidenav-link"
+                    ><span class="sidenav-num">17</span> Spinner</a
+                >
+                <a href="#toast" class="sidenav-link"
+                    ><span class="sidenav-num">18</span> Toast</a
+                >
+                <a href="#list-group" class="sidenav-link"
+                    ><span class="sidenav-num">19</span> List Group</a
+                >
+                <a href="#close-button" class="sidenav-link"
+                    ><span class="sidenav-num">20</span> Close Button</a
+                >
+                <a href="#placeholder" class="sidenav-link"
+                    ><span class="sidenav-num">21</span> Placeholder</a
+                >
             </nav>
 
             <!-- Main content -->
@@ -1750,6 +1774,312 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
                     </div>
                 </section>
 
+                <!-- ── 14 Breadcrumb ──────────────────────────────────────── -->
+                <section class="section" id="breadcrumb">
+                    <h4 style="margin-bottom: var(--space-6)">Breadcrumb</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Default</span>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Projects</a></li>
+                                <li class="breadcrumb-item is-active">api-gateway</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <span class="step-number">Deeper path</span>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Settings</a></li>
+                                <li class="breadcrumb-item"><a href="#">Team</a></li>
+                                <li class="breadcrumb-item is-active">Permissions</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 15 Pagination ─────────────────────────────────────────── -->
+                <section class="section" id="pagination">
+                    <h4 style="margin-bottom: var(--space-6)">Pagination</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Default</span>
+                            <ul class="pagination">
+                                <li class="page-item is-disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span class="material-symbols-outlined" style="font-size:16px;line-height:1">chevron_left</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item is-active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span class="material-symbols-outlined" style="font-size:16px;line-height:1">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="step-number">With ellipsis</span>
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span class="material-symbols-outlined" style="font-size:16px;line-height:1">chevron_left</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item is-disabled"><span class="page-link">…</span></li>
+                                <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                <li class="page-item is-active"><a class="page-link" href="#">9</a></li>
+                                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                                <li class="page-item is-disabled"><span class="page-link">…</span></li>
+                                <li class="page-item"><a class="page-link" href="#">24</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <span class="material-symbols-outlined" style="font-size:16px;line-height:1">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 16 Tabs ────────────────────────────────────────────────── -->
+                <section class="section" id="tabs">
+                    <h4 style="margin-bottom: var(--space-6)">Tabs</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Default</span>
+                            <ul class="tabs" data-fw-component="tabs" data-fw-content="#tabs-content-1">
+                                <li class="tab-item is-active">
+                                    <a class="tab-link" href="#" data-fw-target="#tab-overview">Overview</a>
+                                </li>
+                                <li class="tab-item">
+                                    <a class="tab-link" href="#" data-fw-target="#tab-metrics">Metrics</a>
+                                </li>
+                                <li class="tab-item">
+                                    <a class="tab-link" href="#" data-fw-target="#tab-logs">Logs</a>
+                                </li>
+                                <li class="tab-item is-disabled">
+                                    <a class="tab-link" href="#">Config</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="tabs-content-1">
+                                <div class="tab-panel is-active" id="tab-overview">
+                                    <p>Overview panel. System is running <strong>13 services</strong> across 3 regions.</p>
+                                </div>
+                                <div class="tab-panel" id="tab-metrics">
+                                    <p>Metrics panel. Average response time: <strong>142 ms</strong>. Error rate: <strong>0.3%</strong>.</p>
+                                </div>
+                                <div class="tab-panel" id="tab-logs">
+                                    <pre><code>[INFO]  2026-06-26 08:12:01 — api-gateway started
+[WARN]  2026-06-26 08:12:44 — high memory on node-3
+[INFO]  2026-06-26 08:13:10 — health check passed</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 17 Spinner ─────────────────────────────────────────────── -->
+                <section class="section" id="spinner">
+                    <h4 style="margin-bottom: var(--space-6)">Spinner</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Sizes</span>
+                            <div class="flex-row" style="align-items:center;gap:var(--space-5)">
+                                <div class="spinner spinner-sm" role="status" aria-label="Loading"></div>
+                                <div class="spinner" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-lg" role="status" aria-label="Loading"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Variants</span>
+                            <div class="flex-row" style="align-items:center;gap:var(--space-5)">
+                                <div class="spinner spinner-accent" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-success" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-warning" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-danger" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-info" role="status" aria-label="Loading"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Styles</span>
+                            <div class="flex-row" style="align-items:center;gap:var(--space-6);flex-wrap:wrap">
+                                <div class="spinner spinner-lg" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-lg spinner-accent" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-bars spinner-lg spinner-accent" role="status" aria-label="Loading"><span></span><span></span><span></span><span></span></div>
+                                <div class="spinner spinner-orbit spinner-lg" role="status" aria-label="Loading"></div>
+                                <div class="spinner spinner-deck spinner-lg" role="status" aria-label="Loading"><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Inline with button</span>
+                            <div class="flex-row">
+                                <button class="btn btn-primary" disabled style="gap:var(--space-3);cursor:not-allowed">
+                                    <div class="spinner spinner-sm spinner-invert" role="status" aria-label="Loading"></div>
+                                    Deploying…
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 18 Toast ───────────────────────────────────────────────── -->
+                <section class="section" id="toast">
+                    <h4 style="margin-bottom: var(--space-6)">Toast</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Trigger toasts</span>
+                            <div class="flex-row" style="flex-wrap:wrap">
+                                <button class="btn btn-static" data-fw-toggle="toast" data-fw-target="#toast-default">Default</button>
+                                <button class="btn btn-static" data-fw-toggle="toast" data-fw-target="#toast-success">Success</button>
+                                <button class="btn btn-static" data-fw-toggle="toast" data-fw-target="#toast-warning">Warning</button>
+                                <button class="btn btn-static" data-fw-toggle="toast" data-fw-target="#toast-danger">Danger</button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Static preview</span>
+                            <div style="display:flex;flex-direction:column;gap:var(--space-3);max-width:360px">
+                                <div class="toast" style="display:flex">
+                                    <div class="toast-body">
+                                        <span class="toast-title">Notification</span>
+                                        Build pipeline completed successfully.
+                                    </div>
+                                    <button class="btn-close" aria-label="Close">
+                                        <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                                    </button>
+                                </div>
+                                <div class="toast toast-success" style="display:flex">
+                                    <span class="material-symbols-outlined toast-icon">check_circle</span>
+                                    <div class="toast-body">
+                                        <span class="toast-title">Deployed</span>
+                                        api-gateway v2.4.1 is live in production.
+                                    </div>
+                                    <button class="btn-close" aria-label="Close">
+                                        <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                                    </button>
+                                </div>
+                                <div class="toast toast-danger" style="display:flex">
+                                    <span class="material-symbols-outlined toast-icon">error</span>
+                                    <div class="toast-body">
+                                        <span class="toast-title">Build Failed</span>
+                                        3 tests failed in the image-resize service.
+                                    </div>
+                                    <button class="btn-close" aria-label="Close">
+                                        <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 19 List Group ──────────────────────────────────────────── -->
+                <section class="section" id="list-group">
+                    <h4 style="margin-bottom: var(--space-6)">List Group</h4>
+                    <div class="section-body">
+                        <div style="max-width:320px">
+                            <span class="step-number">Static</span>
+                            <ul class="list-group">
+                                <li class="list-group-item">api-gateway</li>
+                                <li class="list-group-item">auth-service</li>
+                                <li class="list-group-item">image-resize</li>
+                                <li class="list-group-item">analytics</li>
+                            </ul>
+                        </div>
+                        <div style="max-width:320px">
+                            <span class="step-number">Interactive with active &amp; disabled</span>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">Overview</a>
+                                <a href="#" class="list-group-item is-active">Deployments</a>
+                                <a href="#" class="list-group-item">
+                                    <span class="material-symbols-outlined" style="font-size:16px">settings</span>
+                                    Settings
+                                </a>
+                                <a href="#" class="list-group-item is-disabled">Billing</a>
+                            </div>
+                        </div>
+                        <div style="max-width:320px">
+                            <span class="step-number">With labels</span>
+                            <ul class="list-group">
+                                <li class="list-group-item" style="justify-content:space-between">
+                                    api-gateway <span class="label label-success">Healthy</span>
+                                </li>
+                                <li class="list-group-item" style="justify-content:space-between">
+                                    auth-service <span class="label label-warning">Degraded</span>
+                                </li>
+                                <li class="list-group-item" style="justify-content:space-between">
+                                    image-resize <span class="label label-danger">Down</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 20 Close Button ────────────────────────────────────────── -->
+                <section class="section" id="close-button">
+                    <h4 style="margin-bottom: var(--space-6)">Close Button</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Sizes</span>
+                            <div class="flex-row" style="align-items:center;gap:var(--space-4)">
+                                <button class="btn-close btn-close-sm" aria-label="Close">
+                                    <span class="material-symbols-outlined" style="font-size:14px">close</span>
+                                </button>
+                                <button class="btn-close" aria-label="Close">
+                                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                                </button>
+                                <button class="btn-close btn-close-lg" aria-label="Close">
+                                    <span class="material-symbols-outlined" style="font-size:20px">close</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Inside an alert</span>
+                            <div class="alert alert-warning" style="justify-content:space-between">
+                                <div style="display:flex;align-items:center;gap:var(--space-3)">
+                                    <span class="material-symbols-outlined alert-icon">warning</span>
+                                    <div>Disk usage on node-3 exceeds <strong>90%</strong>.</div>
+                                </div>
+                                <button class="btn-close" aria-label="Dismiss">
+                                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 21 Placeholder ─────────────────────────────────────────── -->
+                <section class="section" id="placeholder">
+                    <h4 style="margin-bottom: var(--space-6)">Placeholder</h4>
+                    <div class="section-body">
+                        <div>
+                            <span class="step-number">Glow animation</span>
+                            <div class="card placeholder-glow" style="max-width:340px">
+                                <span class="placeholder col-6 placeholder-lg" style="display:block;margin-bottom:var(--space-3)"></span>
+                                <span class="placeholder col-12" style="display:block;margin-bottom:var(--space-2)"></span>
+                                <span class="placeholder col-10" style="display:block;margin-bottom:var(--space-2)"></span>
+                                <span class="placeholder col-8" style="display:block;margin-bottom:var(--space-4)"></span>
+                                <span class="placeholder col-4 placeholder-lg" style="display:block"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="step-number">Wave animation</span>
+                            <div class="card placeholder-wave" style="max-width:340px">
+                                <span class="placeholder col-5 placeholder-lg" style="display:block;margin-bottom:var(--space-3)"></span>
+                                <span class="placeholder col-12" style="display:block;margin-bottom:var(--space-2)"></span>
+                                <span class="placeholder col-9" style="display:block;margin-bottom:var(--space-2)"></span>
+                                <span class="placeholder col-11" style="display:block;margin-bottom:var(--space-4)"></span>
+                                <span class="placeholder col-3 placeholder-lg" style="display:block"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <div style="height: var(--space-10)"></div>
             </main>
         </div>
@@ -1786,6 +2116,49 @@ document.addEventListener('DOMContentLoaded', () =&gt; {
                 </div>
             </div>
         </footer>
+
+        <!-- ── Toast container (portals at body level) ─────────────────── -->
+        <div class="toast-container toast-top-right">
+            <div class="toast" id="toast-default" data-fw-component="toast" data-fw-duration="4000" style="display:none">
+                <div class="toast-body">
+                    <span class="toast-title">Notification</span>
+                    Build pipeline completed successfully.
+                </div>
+                <button class="btn-close" data-fw-dismiss="toast" aria-label="Close">
+                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                </button>
+            </div>
+            <div class="toast toast-success" id="toast-success" data-fw-component="toast" data-fw-duration="4000" style="display:none">
+                <span class="material-symbols-outlined toast-icon">check_circle</span>
+                <div class="toast-body">
+                    <span class="toast-title">Deployed</span>
+                    api-gateway v2.4.1 is live in production.
+                </div>
+                <button class="btn-close" data-fw-dismiss="toast" aria-label="Close">
+                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                </button>
+            </div>
+            <div class="toast toast-warning" id="toast-warning" data-fw-component="toast" data-fw-duration="4000" style="display:none">
+                <span class="material-symbols-outlined toast-icon">warning</span>
+                <div class="toast-body">
+                    <span class="toast-title">High Memory</span>
+                    Node-3 is at 91% memory capacity.
+                </div>
+                <button class="btn-close" data-fw-dismiss="toast" aria-label="Close">
+                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                </button>
+            </div>
+            <div class="toast toast-danger" id="toast-danger" data-fw-component="toast" data-fw-duration="4000" style="display:none">
+                <span class="material-symbols-outlined toast-icon">error</span>
+                <div class="toast-body">
+                    <span class="toast-title">Build Failed</span>
+                    3 tests failed in the image-resize service.
+                </div>
+                <button class="btn-close" data-fw-dismiss="toast" aria-label="Close">
+                    <span class="material-symbols-outlined" style="font-size:16px">close</span>
+                </button>
+            </div>
+        </div>
 
         <!-- ── Modals (portals at body level) ─────────────────────────── -->
         <div

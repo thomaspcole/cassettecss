@@ -1,0 +1,139 @@
+// Brutalist spinner — the CassetteCSS logo spool spinning in chunky
+// mechanical steps. Masked so the colour variants drive --spinner-color.
+
+// The logo spool — shared by the default reel + reel-to-reel deck.
+$reel: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill-rule='evenodd' d='M50 4a46 46 0 1 0 0 92 46 46 0 1 0 0-92zm0 9a37 37 0 1 1 0 74 37 37 0 1 1 0-74z'/%3E%3Cpath fill-rule='evenodd' d='M50 39a11 11 0 1 0 0 22 11 11 0 1 0 0-22zm0 6a5 5 0 1 1 0 10 5 5 0 1 1 0-10z'/%3E%3Crect x='45.5' y='13' width='9' height='28' transform='rotate(0 50 50)'/%3E%3Crect x='45.5' y='13' width='9' height='28' transform='rotate(120 50 50)'/%3E%3Crect x='45.5' y='13' width='9' height='28' transform='rotate(240 50 50)'/%3E%3C/svg%3E";
+
+.spinner {
+    --spinner-size: 24px;
+    --spinner-color: var(--ink);
+    display: inline-block;
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    background: var(--spinner-color);
+    animation: spinner-rotate 1.1s steps(12) infinite;
+    flex-shrink: 0;
+    -webkit-mask: url($reel) center / contain no-repeat;
+    mask: url($reel) center / contain no-repeat;
+
+    &-sm { --spinner-size: 16px; }
+    &-lg { --spinner-size: 40px; }
+
+    &-accent  { --spinner-color: var(--accent); }
+    &-success { --spinner-color: var(--ok); }
+    &-warning { --spinner-color: var(--warn); }
+    &-danger  { --spinner-color: var(--hazard); }
+    &-info    { --spinner-color: var(--accent-2); }
+    &-invert  { --spinner-color: var(--text-inverse); }
+
+    // ── Style: VU-meter bars ────────────────────────────────────────
+    // Tape-deck level meter — chunky bars stepping up and down.
+    &-bars {
+        width: auto;
+        height: var(--spinner-size);
+        background: none;
+        -webkit-mask: none;
+        mask: none;
+        animation: none;
+        display: inline-flex;
+        align-items: flex-end;
+        gap: calc(var(--spinner-size) / 8);
+
+        span {
+            display: block;
+            width: calc(var(--spinner-size) / 5);
+            height: 100%;
+            background: var(--spinner-color);
+            transform-origin: bottom;
+            animation: spinner-bars 0.7s steps(4) infinite alternate;
+        }
+        span:nth-child(2) { animation-delay: -0.55s; }
+        span:nth-child(3) { animation-delay: -0.25s; }
+        span:nth-child(4) { animation-delay: -0.4s; }
+    }
+
+    // ── Style: orbiting corner block ────────────────────────────────
+    // A small square that jumps around the four corners of a hard frame.
+    &-orbit {
+        position: relative;
+        background: none;
+        -webkit-mask: none;
+        mask: none;
+        border: var(--border);
+        border-color: var(--spinner-color);
+        animation: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--spinner-size) / 3);
+            height: calc(var(--spinner-size) / 3);
+            background: var(--spinner-color);
+            animation: spinner-orbit 1.2s steps(1) infinite;
+        }
+    }
+
+    // ── Style: reel-to-reel ─────────────────────────────────────────
+    // Two logo spools spinning together with tape strung along the
+    // bottom — an old-school reel-to-reel deck. Needs two <span> reels.
+    &-deck {
+        width: auto;
+        height: auto;
+        background: none;
+        -webkit-mask: none;
+        mask: none;
+        animation: none;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: calc(var(--spinner-size) * 0.55);
+
+        span {
+            display: block;
+            width: var(--spinner-size);
+            height: var(--spinner-size);
+            background: var(--spinner-color);
+            animation: spinner-rotate 1.1s steps(12) infinite;
+            -webkit-mask: url($reel) center / contain no-repeat;
+            mask: url($reel) center / contain no-repeat;
+        }
+        span:nth-child(2) { animation-delay: -0.45s; }
+
+        // tape strung between the two reels, level with their bottom edge
+        &::after {
+            content: "";
+            position: absolute;
+            left: calc(var(--spinner-size) / 2);
+            right: calc(var(--spinner-size) / 2);
+            bottom: 2px;
+            height: calc(var(--spinner-size) / 20);
+            background: var(--spinner-color);
+        }
+    }
+}
+
+@keyframes spinner-rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-bars {
+    from { height: 25%; }
+    to   { height: 100%; }
+}
+
+// Active cell walks the perimeter of a 3x3 grid, one cell per step.
+// mid  = centred column/row  →  50% - half a cell
+// far  = last column/row     →  100% - one cell
+@keyframes spinner-orbit {
+    0%     { top: 0;    left: 0; }                                                                          // top-left
+    12.5%  { top: 0;    left: calc(50% - var(--spinner-size) / 6); }                                        // top-centre
+    25%    { top: 0;    left: calc(100% - var(--spinner-size) / 3); }                                       // top-right
+    37.5%  { top: calc(50% - var(--spinner-size) / 6);  left: calc(100% - var(--spinner-size) / 3); }      // mid-right
+    50%    { top: calc(100% - var(--spinner-size) / 3); left: calc(100% - var(--spinner-size) / 3); }      // bottom-right
+    62.5%  { top: calc(100% - var(--spinner-size) / 3); left: calc(50% - var(--spinner-size) / 6); }       // bottom-centre
+    75%    { top: calc(100% - var(--spinner-size) / 3); left: 0; }                                          // bottom-left
+    87.5%  { top: calc(50% - var(--spinner-size) / 6);  left: 0; }                                          // mid-left
+    100%   { top: 0;    left: 0; }                                                                          // back to start
+}
